@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center">
+
+            <!-- Logo con efecto neón -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Glow exterior -->
+                <View
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/microphone_neon_background"
+                    android:alpha="0.4" />
+
+                <!-- Logo principal -->
+                <ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:contentDescription="Logo Medi Care"
+                    app:tint="@color/neon_cyan" />
+            </FrameLayout>
+
+            <!-- Título NEÓN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MEDI CARE"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:textColor="@color/neon_cyan"
+                android:letterSpacing="0.15"
+                android:shadowColor="@color/neon_cyan"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asistente Médico Inteligente"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Instrucciones con fondo neón -->
+            <TextView
+                android:id="@+id/tvInstrucciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingrese sus datos para continuar"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="@drawable/status_neon_background"
+                android:layout_marginBottom="32dp"
+                android:shadowColor="@color/neon_cyan"
+                android:shadowRadius="6" />
+
+            <!-- Campo Nombre NEÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/text_area_neon_background"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NOMBRE"
+                    android:textSize="12sp"
+                    android:textColor="@color/neon_cyan"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textSize="24sp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:hint="Ingrese su nombre"
+                    android:background="@null"
+                    android:padding="12dp"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <!-- Campo PIN NEÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/text_area_neon_background"
+                android:padding="20dp"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PIN (4 DÍGITOS)"
+                    android:textSize="12sp"
+                    android:textColor="@color/neon_magenta"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:textSize="24sp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:hint="••••"
+                    android:background="@null"
+                    android:padding="12dp"
+                    android:maxLength="4"
+                    android:maxLines="1"
+                    android:letterSpacing="0.3" />
+            </LinearLayout>
+
+            <!-- Botón INGRESAR con efecto neón -->
+            <Button
+                android:id="@+id/btnIngresar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INGRESAR"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/button_text"
+                android:letterSpacing="0.15"
+                android:padding="18dp"
+                android:background="@drawable/button_neon_background"
+                android:layout_marginBottom="16dp"
+                android:elevation="6dp" />
+
+            <!-- Botón REGISTRAR con efecto neón -->
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTRARME"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/button_text"
+                android:letterSpacing="0.15"
+                android:padding="18dp"
+                android:background="@drawable/button_neon_background"
+                android:layout_marginBottom="24dp"
+                android:elevation="6dp" />
+
+            <!-- Divisor neón -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/neon_cyan"
+                android:alpha="0.3"
+                android:layout_marginVertical="20dp" />
+
+            <!-- Botón de voz NEÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <!-- Glow del micrófono -->
+                    <View
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/microphone_neon_background"
+                        android:alpha="0.5" />
+
+                    <!-- Botón de micrófono -->
+                    <ImageButton
+                        android:id="@+id/btnVoz"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_microfono"
+                        android:background="@drawable/microphone_neon_background"
+                        android:contentDescription="Ayuda por voz"
+                        android:scaleType="fitCenter"
+                        android:padding="16dp"
+                        app:tint="@color/neon_cyan" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AYUDA POR VOZ"
+                    android:textSize="14sp"
+                    android:textColor="@color/neon_cyan"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_marginTop="12dp"
+                    android:shadowColor="@color/neon_cyan"
+                    android:shadowRadius="8" />
+            </LinearLayout>
+
+            <!-- Progress Bar con efecto neón -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                android:indeterminateTint="@color/neon_cyan" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

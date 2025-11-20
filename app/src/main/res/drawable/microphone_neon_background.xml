@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Glow exterior cyan -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#4000E5FF"/>
+            <size android:width="140dp" android:height="140dp"/>
+        </shape>
+    </item>
+
+    <!-- Anillo cyan brillante -->
+    <item android:top="10dp" android:bottom="10dp" android:left="10dp" android:right="10dp">
+        <shape android:shape="oval">
+            <stroke android:width="3dp" android:color="#00E5FF"/>
+            <solid android:color="#1A0A1F2E"/>
+        </shape>
+    </item>
+
+    <!-- Anillo interior -->
+    <item android:top="15dp" android:bottom="15dp" android:left="15dp" android:right="15dp">
+        <shape android:shape="oval">
+            <stroke android:width="2dp" android:color="#4D00E5FF"/>
+            <solid android:color="#0D1117"/>
+        </shape>
+    </item>
+
+    <!-- Centro gradiente -->
+    <item android:top="20dp" android:bottom="20dp" android:left="20dp" android:right="20dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="50dp"
+                android:centerColor="#1A00E5FF"
+                android:endColor="#0D1117"/>
+        </shape>
+    </item>
+
+</layer-list>

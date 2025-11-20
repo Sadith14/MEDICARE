@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Círculo principal (fondo) -->
+    <path
+        android:fillColor="@color/primary_color"
+        android:pathData="M60,10 A50,50 0 1,1 60,110 A50,50 0 1,1 60,10 Z" />
+
+    <!-- Líneas del diseño -->
+    <path
+        android:fillColor="@android:color/white"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="4"
+        android:pathData="M60,30 L60,90 M40,50 L80,50 M45,35 L75,35 M45,85 L75,85" />
+
+    <!-- Círculo pequeño central -->
+    <path
+        android:fillColor="@color/secondary_color"
+        android:pathData="M60,52 A8,8 0 1,1 60,68 A8,8 0 1,1 60,52 Z" />
+
+</vector>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="status_success">#4CAF50</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="primary_color">#2196F3</color>
+    <color name="background_secondary">#F5F5F5</color>
+    <color name="border_light">#E0E0E0</color>
+    <color name="secondary_text_color">#757575</color>
+    <color name="secondary_color">#FF9800</color>
+    <color name="accent_secondary">#FFC107</color>
+    <color name="microphone_idle">#9E9E9E</color>
+    <!-- Colores principales -->
+    <color name="background_primary">#F8F9FA</color>
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_red">#F44336</color>
+
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="button_text">#FFFFFF</color>
+    <color name="emergency_text">#FFFFFF</color>
+
+    <!-- Colores de fondo -->
+    <color name="header_background">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="microphone_active">#4CAF50</color>
+    <color name="microphone_inactive">#E0E0E0</color>
+
+    <!-- Transparencias -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40FFFFFF</color>
+
+    <!-- Colores principales neón -->
+    <color name="neon_cyan">#00E5FF</color>
+    <color name="neon_magenta">#FF00FF</color>
+    <color name="neon_pink">#FF0080</color>
+    <color name="neon_blue">#00B8D4</color>
+
+    <!-- Fondos oscuros -->
+    <color name="background_primary2">#0D1117</color>
+    <color name="background_secondary2">#161B22</color>
+    <color name="background_tertiary">#1A1F2E</color>
+
+    <!-- Textos -->
+    <color name="text_primary2">#FFFFFF</color>
+    <color name="text_secondary2">#00E5FF</color>
+    <color name="text_hint2">#4D5D6D</color>
+    <color name="text_glow">#00E5FF</color>
+
+    <!-- Elementos UI -->
+    <color name="header_background2">#1A0F1F2E</color>
+    <color name="microphone_active2">#00E5FF</color>
+    <color name="primary_blue2">#00B8D4</color>
+    <color name="button_text2">#FFFFFF</color>
+
+    <!-- Emergencia -->
+    <color name="emergency_background">#33FF0055</color>
+    <color name="emergency_text2">#FF0055</color>
+    <color name="emergency_glow">#FF0088</color>
+
+    <!-- Overlay -->
+    <color name="overlay_dark2">#DD000000</color>
+
+    <!-- Estados -->
+    <color name="accent_green2">#00FF88</color>
+    <color name="accent_yellow">#FFD700</color>
+    <color name="accent_red2">#FF0055</color>
+
+    <!-- Card -->
+    <color name="card_background2">#1A1F2E</color>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="status_success">#4CAF50</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="primary_color">#2196F3</color>
+    <color name="background_secondary">#F5F5F5</color>
+    <color name="border_light">#E0E0E0</color>
+    <color name="secondary_text_color">#757575</color>
+    <color name="secondary_color">#FF9800</color>
+    <color name="accent_secondary">#FFC107</color>
+    <color name="microphone_idle">#9E9E9E</color>
+    <!-- Colores principales -->
+    <color name="background_primary">#F8F9FA</color>
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_red">#F44336</color>
+
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="button_text">#FFFFFF</color>
+    <color name="emergency_text">#FFFFFF</color>
+
+    <!-- Colores de fondo -->
+    <color name="header_background">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="microphone_active">#4CAF50</color>
+    <color name="microphone_inactive">#E0E0E0</color>
+
+    <!-- Transparencias -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40FFFFFF</color>
+</resources>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Layout principal con fondo oscuro -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background_primary"
+        android:padding="16dp">
+
+        <!-- Header con título y estado NEÓN -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/header_neon_background"
+            android:padding="24dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="6dp">
+
+            <!-- Título con efecto glow -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MEDI CARE"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/neon_cyan"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"
+                android:letterSpacing="0.15"
+                android:shadowColor="@color/neon_cyan"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15" />
+
+            <!-- Estado con borde neón -->
+            <TextView
+                android:id="@+id/tvEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vigilancia de emergencia activa"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:gravity="center"
+                android:background="@drawable/status_neon_background"
+                android:padding="10dp"
+                android:shadowColor="@color/neon_cyan"
+                android:shadowRadius="8" />
+
+        </LinearLayout>
+
+        <!-- Área principal con micrófono NEÓN ANIMADO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Contenedor del micrófono con múltiples capas -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <!-- Círculo exterior de glow (se puede animar) -->
+                <View
+                    android:id="@+id/vGlowOuter"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/microphone_neon_background"
+                    android:alpha="0.6" />
+
+                <!-- Icono de micrófono principal -->
+                <ImageView
+                    android:id="@+id/ivMicrophone"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/microphone_neon_background"
+                    android:clickable="true"
+                    android:contentDescription="Micrófono para comandos de voz"
+                    android:elevation="8dp"
+                    android:focusable="true"
+                    android:padding="40dp"
+                    android:src="@drawable/ic_microfono"
+                    app:tint="@color/neon_cyan" />
+
+                <!-- Círculo interior que pulsa (se puede animar) -->
+                <View
+                    android:id="@+id/vPulseInner"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:alpha="0"
+                    android:background="@drawable/microphone_neon_active" />
+
+            </FrameLayout>
+
+            <!-- Texto de instrucciones con glow -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="HABLA AHORA"
+                android:textColor="@color/neon_cyan"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.2"
+                android:shadowColor="@color/neon_cyan"
+                android:shadowRadius="10" />
+
+            <!-- Indicador visual de nivel de audio -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/vAudioLevel1"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/neon_cyan"
+                    android:alpha="0.3" />
+
+                <View
+                    android:id="@+id/vAudioLevel2"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/neon_cyan"
+                    android:alpha="0.3" />
+
+                <View
+                    android:id="@+id/vAudioLevel3"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/neon_cyan"
+                    android:alpha="0.3" />
+
+                <View
+                    android:id="@+id/vAudioLevel4"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/neon_magenta"
+                    android:alpha="0.3" />
+
+                <View
+                    android:id="@+id/vAudioLevel5"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/neon_magenta"
+                    android:alpha="0.3" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Área de texto reconocido con borde neón -->
+        <ScrollView
+            android:id="@+id/scrollMain"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1.2"
+            android:background="@drawable/text_area_neon_background"
+            android:padding="16dp"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/tvTextoReconocido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="El texto reconocido aparecerá aquí..."
+                android:lineSpacingExtra="6dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp"
+                android:fontFamily="monospace" />
+
+        </ScrollView>
+
+        <!-- Indicador de emergencia NEÓN -->
+        <LinearLayout
+            android:id="@+id/layoutEmergencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/emergency_neon_background"
+            android:padding="14dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_emergency"
+                android:layout_marginEnd="12dp"
+                app:tint="@color/emergency_text2" />
+
+            <TextView
+                android:id="@+id/tvEmergencia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MODO EMERGENCIA ACTIVADO"
+                android:textColor="@color/emergency_text"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:shadowColor="@color/emergency_glow"
+                android:shadowRadius="8" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Overlay para lista de medicamentos NEÓN -->
+    <LinearLayout
+        android:id="@+id/layoutMedicamentos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/overlay_dark"
+        android:clickable="true"
+        android:focusable="true">
+
+        <!-- Contenedor de la lista con fondo neón -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:background="@drawable/medications_neon_background"
+            android:elevation="12dp">
+
+            <!-- Header de la lista -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/header_neon_background"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MIS MEDICAMENTOS"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/neon_cyan"
+                    android:gravity="center"
+                    android:letterSpacing="0.1"
+                    android:shadowColor="@color/neon_cyan"
+                    android:shadowRadius="12" />
+
+                <ImageView
+                    android:id="@+id/btnCerrarLista"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Cerrar lista"
+                    app:tint="@color/neon_cyan" />
+
+            </LinearLayout>
+
+            <!-- Lista de medicamentos -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMedicamentos"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:scrollbars="vertical"
+                android:clipToPadding="false" />
+
+            <!-- Botones neón -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnOcultarMedicamentos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="OCULTAR"
+                    android:background="@drawable/button_neon_background"
+                    android:textColor="@color/button_text"
+                    android:textStyle="bold"
+                    android:padding="14dp"
+                    android:layout_marginEnd="12dp"
+                    android:letterSpacing="0.1" />
+
+                <Button
+                    android:id="@+id/btnAgregarMedicamento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="AGREGAR"
+                    android:background="@drawable/button_neon_background"
+                    android:textColor="@color/button_text"
+                    android:textStyle="bold"
+                    android:padding="14dp"
+                    android:letterSpacing="0.1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

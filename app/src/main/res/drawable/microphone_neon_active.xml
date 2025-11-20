@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Glow exterior brillante cuando está activo -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#8000E5FF"/>
+            <size android:width="140dp" android:height="140dp"/>
+        </shape>
+    </item>
+
+    <!-- Anillo cyan muy brillante -->
+    <item android:top="8dp" android:bottom="8dp" android:left="8dp" android:right="8dp">
+        <shape android:shape="oval">
+            <stroke android:width="4dp" android:color="#00E5FF"/>
+            <solid android:color="#2A1A3F5E"/>
+        </shape>
+    </item>
+
+    <!-- Anillo medio pulsante -->
+    <item android:top="15dp" android:bottom="15dp" android:left="15dp" android:right="15dp">
+        <shape android:shape="oval">
+            <stroke android:width="3dp" android:color="#80FF00FF"/>
+            <solid android:color="#1A1F2E"/>
+        </shape>
+    </item>
+
+    <!-- Centro brillante -->
+    <item android:top="20dp" android:bottom="20dp" android:left="20dp" android:right="20dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="50dp"
+                android:centerColor="#4000E5FF"
+                android:endColor="#0D1117"/>
+        </shape>
+    </item>
+
+</layer-list>
