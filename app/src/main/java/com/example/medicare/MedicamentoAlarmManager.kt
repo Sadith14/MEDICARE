@@ -648,87 +648,193 @@ class AlarmOverlayActivity : android.app.Activity() {
     }
 
     private fun createAlarmLayout() {
+        // Layout principal con gradiente suave
         val layout = android.widget.LinearLayout(this).apply {
             orientation = android.widget.LinearLayout.VERTICAL
-            setPadding(50, 100, 50, 100)
-            setBackgroundColor(android.graphics.Color.parseColor("#FF1976D2"))
+            setPadding(40, 80, 40, 80)
+            gravity = android.view.Gravity.CENTER
+            setBackgroundColor(android.graphics.Color.parseColor("#F5F5F5")) // Fondo gris muy claro
         }
-
-        // Título
-        val titulo = android.widget.TextView(this).apply {
-            text = "⏰ RECORDATORIO DE MEDICAMENTO"
-            textSize = 24f
-            setTextColor(android.graphics.Color.WHITE)
+    
+        // Card contenedor con sombra (simulada con bordes)
+        val cardContainer = android.widget.LinearLayout(this).apply {
+            orientation = android.widget.LinearLayout.VERTICAL
+            setPadding(50, 50, 50, 50)
+            setBackgroundColor(android.graphics.Color.WHITE)
+            
+            // Sombra simulada con elevación
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                elevation = 24f
+            }
+        }
+    
+        // Ícono grande de pastilla
+        val iconoPastilla = android.widget.TextView(this).apply {
+            text = "💊"
+            textSize = 80f // Ícono muy grande
             gravity = android.view.Gravity.CENTER
             setPadding(0, 0, 0, 30)
-            typeface = android.graphics.Typeface.DEFAULT_BOLD
         }
-
-        // Nombre del medicamento
-        val nombreMed = android.widget.TextView(this).apply {
-            text = nombreMedicamento
-            textSize = 32f
-            setTextColor(android.graphics.Color.WHITE)
-            gravity = android.view.Gravity.CENTER
-            setPadding(0, 0, 0, 20)
-            typeface = android.graphics.Typeface.DEFAULT_BOLD
-        }
-
-        // Mensaje
-        val mensaje = android.widget.TextView(this).apply {
-            text = "Es hora de tomar una dosis\n\n💊 1 unidad"
-            textSize = 18f
-            setTextColor(android.graphics.Color.WHITE)
+    
+        // Título principal
+        val titulo = android.widget.TextView(this).apply {
+            text = "Es hora de tomar su medicamento"
+            textSize = 28f // Texto grande para adultos mayores
+            setTextColor(android.graphics.Color.parseColor("#2C3E50")) // Gris oscuro suave
             gravity = android.view.Gravity.CENTER
             setPadding(0, 0, 0, 40)
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            
+            // Sombra sutil en el texto
+            setShadowLayer(2f, 0f, 2f, android.graphics.Color.parseColor("#40000000"))
         }
-
-        // Botón Tomado
+    
+        // Nombre del medicamento - MUY DESTACADO
+        val nombreMed = android.widget.TextView(this).apply {
+            text = nombreMedicamento
+            textSize = 48f // Extra grande para legibilidad
+            setTextColor(android.graphics.Color.parseColor("#E74C3C")) // Rojo suave pero visible
+            gravity = android.view.Gravity.CENTER
+            setPadding(30, 30, 30, 30)
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            
+            // Fondo con color suave
+            setBackgroundColor(android.graphics.Color.parseColor("#FFEBEE")) // Rosa muy claro
+            
+            // Sombra en el texto
+            setShadowLayer(3f, 0f, 3f, android.graphics.Color.parseColor("#60000000"))
+        }
+    
+        // Espacio
+        val espacio1 = android.view.View(this).apply {
+            layoutParams = android.widget.LinearLayout.LayoutParams(
+                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                40
+            )
+        }
+    
+        // Mensaje de dosis
+        val mensaje = android.widget.TextView(this).apply {
+            text = "Dosis a tomar:"
+            textSize = 24f // Texto grande
+            setTextColor(android.graphics.Color.parseColor("#34495E"))
+            gravity = android.view.Gravity.CENTER
+            setPadding(0, 0, 0, 15)
+        }
+    
+        // Dosis destacada
+        val dosis = android.widget.TextView(this).apply {
+            text = "1 unidad"
+            textSize = 36f // Muy grande
+            setTextColor(android.graphics.Color.parseColor("#27AE60")) // Verde suave
+            gravity = android.view.Gravity.CENTER
+            setPadding(0, 0, 0, 50)
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            
+            setShadowLayer(2f, 0f, 2f, android.graphics.Color.parseColor("#40000000"))
+        }
+    
+        // Separador visual
+        val separador = android.view.View(this).apply {
+            setBackgroundColor(android.graphics.Color.parseColor("#E0E0E0"))
+            layoutParams = android.widget.LinearLayout.LayoutParams(
+                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                3
+            ).apply {
+                setMargins(0, 20, 0, 40)
+            }
+        }
+    
+        // Layout para botones (vertical para adultos mayores - más fácil de tocar)
+        val buttonLayout = android.widget.LinearLayout(this).apply {
+            orientation = android.widget.LinearLayout.VERTICAL
+            gravity = android.view.Gravity.CENTER
+        }
+    
+        // Botón TOMADO - Verde suave con sombra
         val btnTomado = android.widget.Button(this).apply {
-            text = "✓ TOMADO"
-            textSize = 20f
-            setBackgroundColor(android.graphics.Color.parseColor("#FF4CAF50"))
+            text = "✓ YA TOMÉ MI MEDICAMENTO"
+            textSize = 26f // Texto muy grande
+            setBackgroundColor(android.graphics.Color.parseColor("#27AE60")) // Verde suave
             setTextColor(android.graphics.Color.WHITE)
-            setPadding(20, 20, 20, 20)
+            setPadding(40, 50, 40, 50) // Botón grande y fácil de presionar
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            
+            // Bordes redondeados
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                elevation = 8f
+                translationZ = 8f
+            }
+            
             setOnClickListener {
+                // Feedback visual al presionar
+                alpha = 0.7f
+                postDelayed({ alpha = 1f }, 100)
                 marcarComoTomado()
             }
         }
-
-        // Botón Postergar
+    
+        // Espacio entre botones
+        val espacio2 = android.view.View(this).apply {
+            layoutParams = android.widget.LinearLayout.LayoutParams(
+                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                30
+            )
+        }
+    
+        // Botón POSTERGAR - Azul suave
         val btnPostergar = android.widget.Button(this).apply {
-            text = "⏱ POSTERGAR 5 MIN"
-            textSize = 20f
-            setBackgroundColor(android.graphics.Color.parseColor("#FFFF9800"))
+            text = "⏱ RECORDAR EN 5 MINUTOS"
+            textSize = 24f // Un poco más pequeño que el principal
+            setBackgroundColor(android.graphics.Color.parseColor("#3498DB")) // Azul suave
             setTextColor(android.graphics.Color.WHITE)
-            setPadding(20, 20, 20, 20)
+            setPadding(40, 45, 40, 45)
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                elevation = 8f
+                translationZ = 8f
+            }
+            
             setOnClickListener {
+                // Feedback visual
+                alpha = 0.7f
+                postDelayed({ alpha = 1f }, 100)
                 postergarRecordatorio()
             }
         }
-
-        // Layout para botones
-        val buttonLayout = android.widget.LinearLayout(this).apply {
-            orientation = android.widget.LinearLayout.HORIZONTAL
-            gravity = android.view.Gravity.CENTER
-        }
-
+    
+        // Parámetros para los botones (ancho completo)
         val buttonParams = android.widget.LinearLayout.LayoutParams(
-            0,
-            android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
-            1f
-        ).apply {
-            setMargins(10, 0, 10, 0)
-        }
-
+            android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+            android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+    
+        // Agregar elementos al card
+        cardContainer.addView(iconoPastilla)
+        cardContainer.addView(titulo)
+        cardContainer.addView(nombreMed)
+        cardContainer.addView(espacio1)
+        cardContainer.addView(mensaje)
+        cardContainer.addView(dosis)
+        cardContainer.addView(separador)
+    
+        // Agregar botones al layout de botones
         buttonLayout.addView(btnTomado, buttonParams)
+        buttonLayout.addView(espacio2)
         buttonLayout.addView(btnPostergar, buttonParams)
-
-        layout.addView(titulo)
-        layout.addView(nombreMed)
-        layout.addView(mensaje)
-        layout.addView(buttonLayout)
-
+    
+        cardContainer.addView(buttonLayout)
+    
+        // Parámetros para el card
+        val cardParams = android.widget.LinearLayout.LayoutParams(
+            android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+            android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+        ).apply {
+            setMargins(30, 30, 30, 30)
+        }
+    
+        layout.addView(cardContainer, cardParams)
         setContentView(layout)
     }
 
